@@ -33,6 +33,7 @@ export default {
         text: this.newTodo,
         completed: false,
       })
+      this.newTodo = ""
     },
   }
 }
