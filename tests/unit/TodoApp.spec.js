@@ -31,5 +31,14 @@ describe('TodoApp.vue', () => {
     // Clear the value after submit
     expect(inputValue.element.value).toBe('')
   })
+
+  it('should be able to complete todo', async () => {
+    const wrapper = mount(TodoApp)
+
+    await wrapper.get('[data-test="todo-checkbox"]').setValue(true)
+
+    // Return an array of classes
+    expect(wrapper.get('[data-test="todo"]').classes()).toContain('completed')
+  })
 })
 
