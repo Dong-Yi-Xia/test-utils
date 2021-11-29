@@ -1,14 +1,17 @@
 <template>
+  <Nav/>
   <TodoApp/>
 </template>
 
 <script>
 import TodoApp from './components/TodoApp.vue'
+import Nav from './components/Nav.vue'
 
 export default {
   name: 'App',
   components: {
     TodoApp,
+    Nav,
   }
 }
 </script>

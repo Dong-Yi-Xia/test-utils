@@ -2,18 +2,25 @@ import { mount } from '@vue/test-utils'
 import TodoApp from '@/components/TodoApp.vue'
 
 describe('TodoApp.vue', () => {
-  it('should render todo text', () => {
-    const wrapper = mount(TodoApp)
+  let wrapper
 
-    //get method to get html elemts
+  beforeEach(() => {
+    wrapper = mount(TodoApp)
+  })
+
+  // All runs once
+  // beforeAll
+  // afterAll
+  // afterEach
+
+  it('should render todo text', () => {
+    //get method to get html elements
     const todo = wrapper.get('[data-test="todo"]')
 
     expect(todo.text()).toBe('Learn vue testing')
   })
 
   it('should add new todo', async () => {
-    const wrapper = mount(TodoApp)
-
     // Find all elements with property name
     expect(wrapper.findAll('[data-test="todo"]')).toHaveLength(1)
 
@@ -33,8 +40,6 @@ describe('TodoApp.vue', () => {
   })
 
   it('should be able to complete todo', async () => {
-    const wrapper = mount(TodoApp)
-
     await wrapper.get('[data-test="todo-checkbox"]').setValue(true)
 
     // Return an array of classes
