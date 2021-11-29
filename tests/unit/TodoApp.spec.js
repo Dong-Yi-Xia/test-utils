@@ -29,7 +29,6 @@ describe('TodoApp.vue', () => {
     expect(wrapper.findAll('[data-test="todo"]')).toHaveLength(2)
 
     // Clear the value after submit
-    await inputValue.setValue('')
     expect(inputValue.element.value).toBe('')
   })
 })
